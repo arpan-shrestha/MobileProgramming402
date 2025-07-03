@@ -1,2 +1,2 @@
 # MobileProgramming402
-Elective Cpurse of College.
+Elective Course of College.
