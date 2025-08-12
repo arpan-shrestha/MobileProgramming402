@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hover-enabled:hover{
+        color: blue;
+    }
+</style>
+<body>
+
+    <h1>This is the JS test</h1>
+    <p id="demo">Lorem ipsum dolor <span id="this">Change</span> amet consectetur adipisicing elit.</p>
+    <script>
+        function myfunction() {
+            document.getElementById("this").style.fontSize="200%";
+            document.getElementById("demo").style.backgroundColor="lightblue";
+            document.getElementById("this").style.color="red";
+            document.getElementById("this").classList.add("hover-enabled");
+        }
+
+    </script>
+    <button type="button" onclick="myfunction()"> Click Me</button>
+</body>
+</html>
