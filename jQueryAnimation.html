@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation With Background Color Change</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    div {
+      background: red;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    p {
+      margin: 10px 0;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var div = $("div");
+            div.animate({height: '300px', opacity:'0.8', backgroundColor:'red'}, "slow");
+            div.animate({width: '300px',opacity:'0.8', backgroundColor: 'green'}, "slow");
+            div.animate({height: '100px',opacity:'0.8', backgroundColor:'blue'}, "slow");
+            div.animate({width: '100px',opacity:'0.8', backgroundColor: 'red'}, "slow");
+            $('p').hide();
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>jQuery Animation With Background Color Change</h1>
+    <p>Click the button to animate the div and hide the paragraph text</p> 
+    <button>Start Animation</button>
+    <div></div>
+</body>
+</html>
+
