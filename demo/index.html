@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase RealTime Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Firebase RealTime Form</h1>
+  <div class="container">
+    <div class="column">
+      <div class="form-section">
+        <h1>Create / Write Form</h1>
+        <input type="text" id="create-id" placeholder="ID" />
+        <input type="text" id="create-name" placeholder="First Name" />
+        <input type="text" id="create-last" placeholder="Last Name" />
+        <input type="text" id="create-email" placeholder="Email" />
+        <button onclick="writeUserData(
+            document.getElementById('create-id').value,
+            document.getElementById('create-name').value,
+            document.getElementById('create-last').value,
+            document.getElementById('create-email').value
+        )">Send</button>
+      </div>
+      <div class="form-section">
+        <h1>Read User from Firebase</h1>
+        <button onclick="readUser()">List the Users</button>
+        <ul id="user-list"></ul>
+      </div>
+    </div>
+    <div class="column">
+      <div class="form-section">
+        <h1>Delete User</h1>
+        <input type="text" id="delete-id" placeholder="User ID to delete" />
+        <button onclick="deleteUserData(document.getElementById('delete-id').value)">Delete User</button>
+      </div>
+      <div class="form-section">
+        <h1>Update User</h1>
+        <input type="text" id="update-id" placeholder="User ID to update" />
+        <input type="text" id="update-name" placeholder="New First Name (optional)" />
+        <input type="text" id="update-last" placeholder="New Last Name (optional)" />
+        <input type="text" id="update-email" placeholder="New Email (optional)" />
+        <button onclick="updateUserFromForm()">Update User</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
