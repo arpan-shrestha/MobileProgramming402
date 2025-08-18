@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Your Travel Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Wanderlust</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#itinerary" class="nav-link">Itinerary</a>
+                <a href="#bucket-list" class="nav-link">Bucket List</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Explore the world's most beautiful destinations and create unforgettable memories</p>
+                <button class="cta-button" onclick="scrollToSection('itinerary')">
+                    Start Planning <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Plan Your Trip</h3>
+                    <p>Create detailed itineraries</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-route"></i>
+                <h3>Smart Itineraries</h3>
+                <p>Plan your perfect trip with our intelligent itinerary builder</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>Bucket List</h3>
+                <p>Keep track of your travel dreams and goals</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile First</h3>
+                <p>Access your travel plans anywhere, anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Page -->
+    <section id="itinerary" class="page">
+        <div class="page-header">
+            <h2>Your Travel Itinerary</h2>
+            <p>Plan and organize your perfect trip</p>
+        </div>
+        
+        <div class="itinerary-container">
+            <div class="itinerary-form">
+                <h3>Create New Itinerary</h3>
+                <form id="itinerary-form">
+                    <div class="form-group">
+                        <label for="trip-name">Trip Name</label>
+                        <input type="text" id="trip-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">End Date</label>
+                        <input type="date" id="end-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Itinerary</button>
+                </form>
+            </div>
+            
+            <div class="itinerary-list">
+                <h3>Your Itineraries</h3>
+                <div id="itineraries-container">
+                    <!-- Itineraries will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bucket List Page -->
+    <section id="bucket-list" class="page">
+        <div class="page-header">
+            <h2>Your Travel Bucket List</h2>
+            <p>Dream big and plan your ultimate adventures</p>
+        </div>
+        
+        <div class="bucket-list-container">
+            <div class="bucket-list-form">
+                <h3>Add New Dream Destination</h3>
+                <form id="bucket-list-form">
+                    <div class="form-group">
+                        <label for="destination-name">Destination</label>
+                        <input type="text" id="destination-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority" required>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dream-description">Why this destination?</label>
+                        <textarea id="dream-description" rows="3" placeholder="What makes this place special to you?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Add to Bucket List</button>
+                </form>
+            </div>
+            
+            <div class="bucket-list-display">
+                <h3>Your Dream Destinations</h3>
+                <div id="bucket-list-items">
+                    <!-- Bucket list items will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+        <div class="page-header">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hello@wanderlust.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>123 Travel Street<br>Adventure City, AC 12345</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Wanderlust</h4>
+                <p>Your ultimate travel companion for planning adventures and exploring the world.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#itinerary">Itinerary</a></li>
+                    <li><a href="#bucket-list">Bucket List</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Bottom navigation">
+        <button class="bn-item" id="bn-home" data-target="home" aria-label="Home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="bn-item" id="bn-itinerary" data-target="itinerary" aria-label="Itinerary">
+            <i class="fas fa-list-alt"></i>
+            <span>Itinerary</span>
+        </button>
+        <button class="bn-mic" id="bn-mic" aria-label="Speech to text" aria-pressed="false">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button class="bn-item" id="bn-bucket" data-target="bucket-list" aria-label="Bucket List">
+            <i class="fas fa-heart"></i>
+            <span>Bucket</span>
+        </button>
+        <button class="bn-item" id="bn-contact" data-target="contact" aria-label="Contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </button>
+    </nav>
+
+    <!-- Speech To Text Modal -->
+    <div class="stt-overlay" id="stt-overlay" aria-hidden="true">
+        <div class="stt-dialog" role="dialog" aria-modal="true" aria-labelledby="stt-title">
+            <div class="stt-header">
+                <h3 id="stt-title"><i class="fas fa-microphone"></i> Speech to Text</h3>
+                <button class="stt-close" id="stt-close" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="stt-controls">
+                <label for="stt-lang">Language</label>
+                <select id="stt-lang">
+                    <option value="en-US">English (US)</option>
+                    <option value="en-GB">English (UK)</option>
+                    <option value="hi-IN">Hindi (India)</option>
+                    <option value="ne-NP">Nepali (Nepal)</option>
+                    <option value="es-ES">Spanish (Spain)</option>
+                    <option value="fr-FR">French (France)</option>
+                </select>
+                <label for="stt-target">Translate to</label>
+                <select id="stt-target">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ne">Nepali</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                </select>
+                <div class="stt-status" id="stt-status">
+                    <span class="dot"></span>
+                    <span class="text">Idle</span>
+                </div>
+            </div>
+            <div class="stt-body">
+                <textarea id="stt-transcript" placeholder="Your speech will appear here..." readonly></textarea>
+                <textarea id="stt-translation" placeholder="Translation will appear here..." readonly></textarea>
+            </div>
+            <div class="stt-footer">
+                <button class="stt-btn" id="stt-copy"><i class="fas fa-copy"></i> Copy</button>
+                <button class="stt-btn" id="stt-clear"><i class="fas fa-eraser"></i> Clear</button>
+                <button class="stt-btn" id="stt-translate"><i class="fas fa-language"></i> Translate</button>
+                <button class="stt-btn primary" id="stt-toggle"><i class="fas fa-microphone"></i> Start</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
